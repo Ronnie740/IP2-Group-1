@@ -68,7 +68,7 @@
 				</nav>
 			</header>
 
-			<section class="grid grid-cols-2 gap 4 text-white" id="title">
+			<section class="grid lg:grid-cols-2 grid-row-2 gap 4 text-white" id="title">
 				<div class="flex flex-col mb-24 md:mb-32">
 					<h1 class="md:text-6xl sm:text-4xl text-3xl ml-10 lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
 					<p class="md:text-3xl sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
@@ -76,7 +76,7 @@
 						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
 					</p>
 				</div>
-				<div class="w-auto h-auto bg-white rounded-md m-5"></div>
+				<div class="w-auto lg:h-auto bg-white rounded-md m-5 h-56"></div>
 			</section>
 		</div>
 		<div class="mt-10 flex">
@@ -86,8 +86,8 @@
 
 		<div class="grid grid-rows-3 gap-4 grid-flow-col mx-10">
 			<!-- section 1 -->
-			<div class="grid grid-cols-2 gap-4">
-				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
+				<div class="w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
 					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
 					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
@@ -97,7 +97,8 @@
 				</div>
 			</div>
 			<!-- section 2 -->
-			<div class="grid grid-cols-2 gap-4">
+			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
+				<div class="lg:hidden w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
 					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
 					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
@@ -105,11 +106,11 @@
 						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
 					</p>
 				</div>
-				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+				<div class="hidden lg:block w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
 			</div>
 			<!-- section 3 -->
-			<div class="grid grid-cols-2 gap-4">
-				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
+				<div class="w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
 					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
 					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
@@ -131,7 +132,7 @@
 			</div>
 		</section>
 		<!-- footer -->
-		<footer class="flex bg-[#000135] text-white">
+		<footer class="lg:flex bg-[#000135] text-white h-auto p-5 hidden">
 			<div class="grid grid-cols-4 gap-20 mx-auto my-5">
 				<div>
 					<img src="" alt="Logo" />
@@ -156,8 +157,51 @@
 				<div>
 					<header class="text-2xl">Socials</header>
 					<ul class="list-none my-3">
-						<li>@WorldInfoDeskOfficial</li>
-						<li>@WorldInfoDeskOfficial</li>
+						<li class="flex">
+							<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+							<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+						</li>
+						<li class="flex">
+							<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+							<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<footer class="flex bg-[#000135] text-white h-auto p-5 lg:hidden">
+			<div class="grid mx-auto my-5 grid-rows-4 gap-10">
+				<div>
+					<img src="" alt="Logo" />
+				</div>
+				<div>
+					<header class="text-2xl">Navigation</header>
+					<ul class="list-none my-3">
+						<li><a href="#" class="cursor-pointer">Home</a></li>
+						<li><a href="#" class="cursor-pointer">Authors</a></li>
+						<li><a href="#" class="cursor-pointer">Apps</a></li>
+						<li><a href="#" class="cursor-pointer">About</a></li>
+						<li><a href="#" class="cursor-pointer">Contact</a></li>
+					</ul>
+				</div>
+				<div>
+					<header class="text-2xl">Contact Information</header>
+					<ul class="list-none my-3">
+						<li>+77717000998</li>
+						<li>worldinfodeskhelp@gmail.com</li>
+					</ul>
+				</div>
+				<div>
+					<header class="text-2xl">Socials</header>
+					<ul class="list-none my-3">
+						<li class="flex">
+							<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+							<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+						</li>
+						<li class="flex">
+							<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+							<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+						</li>
 					</ul>
 				</div>
 			</div>
