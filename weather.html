@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+	</head>
+	<body>
+		<script>
+			fetch("http://api.weatherapi.com/v1/forecast.json?key=99b6f193ebd642889c5150710221307&q=London&days=5&aqi=no&alerts=no")
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+				});
+		</script>
+	</body>
+</html>
