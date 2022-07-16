@@ -7,5 +7,160 @@
 		<title>IP2 Group 1</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body></body>
+	<body class="overflow-auto font-['Nunito',sans-serif]">
+		<div id="bg" class="bg-cover bg-center overflow-auto bg-[#000135]">
+			<header class="flex">
+				<nav class="flex-grow text-white">
+					<img src="" alt="Website_Logo" class="float-left w-auto h-40 p-5" />
+					<div class="hidden lg:block">
+						<ul class="list-none justify-center float-right text-2xl text-center p-5 z-0">
+							<li class="float-left p-5">
+								<a href="#" class="hover:bg-blue-800 p-5 rounded-md hover:text-white">Home</a>
+							</li>
+							<li class="float-left p-5">
+								<a href="#" class="hover:bg-blue-800 p-5 rounded-md hover:text-white" id="dropdown">Authors</a>
+							</li>
+							<li class="float-left p-5">
+								<a href="about.html" class="hover:bg-blue-800 p-5 rounded-md hover:text-white">Apps</a>
+							</li>
+							<li class="float-left p-5">
+								<a href="contact.html" class="hover:bg-blue-800 p-5 rounded-md hover:text-white">About</a>
+							</li>
+							<li class="float-left p-5">
+								<a href="contact.html" class="hover:bg-blue-800 p-5 rounded-md hover:text-white">Contact</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Small screen navigation -->
+					<div class="float-right lg:hidden pr-4">
+						<button class="hover:bg-blue-900 rounded-md hover:text-white px-1 my-10 nav-toggler focus:outline-none" id="menuIcon">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 lx-10" viewBox="0 0 20 20" fill="currentColor">
+								<path
+									fill-rule="evenodd"
+									d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<!-- Small screen nav bar -->
+					<div class="bg-blue-900 w-full rounded-md absolute mt-20 hidden" id="navSm">
+						<div class="w-full">
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
+								<a href="./home.html"> <span>Home</span></a>
+							</div>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-600">
+								<a href="#" class="rounded-md hover:text-white" id="smDropdown">Country</a>
+								<ul class="hidden rounded-md mt-4" id="smDropdown-ul">
+									<li class="p-5 bg-blue-700 rounded-md"><a href="">Mautirius</a></li>
+									<li class="p-5 bg-blue-800 rounded-md"><a href="">UK</a></li>
+									<li class="p-5 bg-blue-700 rounded-md"><a href="">Kenya</a></li>
+								</ul>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
+								<a href=""> <span>About Us</span></a>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
+								<a href=""> <span>Contact Us</span></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+
+			<section class="grid grid-cols-2 gap 4 text-white" id="title">
+				<div class="flex flex-col mb-24 md:mb-32">
+					<h1 class="md:text-6xl sm:text-4xl text-3xl ml-10 lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
+					<p class="md:text-3xl sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
+						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+					</p>
+				</div>
+				<div class="w-auto h-auto bg-white rounded-md m-5"></div>
+			</section>
+		</div>
+		<div class="mt-10 flex">
+			<h1 class="mx-auto md:text-4xl sm:text-2xl text-xl font-bold">How Does World Info Desk Work</h1>
+		</div>
+		<!-- collection grid -->
+
+		<div class="grid grid-rows-3 gap-4 grid-flow-col mx-10">
+			<!-- section 1 -->
+			<div class="grid grid-cols-2 gap-4">
+				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+				<div class="flex flex-col mb-24 md:mb-32 mt-10">
+					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
+					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
+						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+					</p>
+				</div>
+			</div>
+			<!-- section 2 -->
+			<div class="grid grid-cols-2 gap-4">
+				<div class="flex flex-col mb-24 md:mb-32 mt-10">
+					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
+					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
+						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+					</p>
+				</div>
+				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+			</div>
+			<!-- section 3 -->
+			<div class="grid grid-cols-2 gap-4">
+				<div class="w-auto h-auto bg-blue-600 rounded-md m-5"></div>
+				<div class="flex flex-col mb-24 md:mb-32 mt-10">
+					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Title Goes Here</h1>
+					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
+						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- call to action -->
+		<section class="flex bg-[#F4BE30]">
+			<div class="grid grid-cols-2 gap-4 mx-auto">
+				<div>
+					<h1 class="md:text-4xl text-2xl text-center font-extrabold font-['Nunito',sans-serif] my-10 mx-20 text-white">Call to Action Message <br />Will be Here</h1>
+				</div>
+				<div class="flex">
+					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#FF9900] hover:bg-[#ffcf88]">Click Here!</button>
+				</div>
+			</div>
+		</section>
+		<!-- footer -->
+		<footer class="flex bg-[#000135] text-white">
+			<div class="grid grid-cols-4 gap-20 mx-auto my-5">
+				<div>
+					<img src="" alt="Logo" />
+				</div>
+				<div>
+					<header class="text-2xl">Navigation</header>
+					<ul class="list-none my-3">
+						<li><a href="#" class="cursor-pointer">Home</a></li>
+						<li><a href="#" class="cursor-pointer">Authors</a></li>
+						<li><a href="#" class="cursor-pointer">Apps</a></li>
+						<li><a href="#" class="cursor-pointer">About</a></li>
+						<li><a href="#" class="cursor-pointer">Contact</a></li>
+					</ul>
+				</div>
+				<div>
+					<header class="text-2xl">Contact Information</header>
+					<ul class="list-none my-3">
+						<li>+77717000998</li>
+						<li>worldinfodeskhelp@gmail.com</li>
+					</ul>
+				</div>
+				<div>
+					<header class="text-2xl">Socials</header>
+					<ul class="list-none my-3">
+						<li>@WorldInfoDeskOfficial</li>
+						<li>@WorldInfoDeskOfficial</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
