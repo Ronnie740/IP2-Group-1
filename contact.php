@@ -28,6 +28,6 @@ $phone=$_POST['phone'];
 $message=$_POST['message'];
 $query->execute();
 $conn = null;
-echo 'Hi '.$name.' ' .'thanks for your interest.</br>';
-echo 'We will contact you at '. $email .' very soon.<br />';
+echo 'Hi '.$_POST['name'].' ' .'thanks for your interest.</br>';
+echo 'We will contact you at '. $_POST['email'] .' very soon.<br />';
 ?>
