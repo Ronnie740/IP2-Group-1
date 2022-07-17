@@ -18,7 +18,7 @@
 								<a href="home.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 text-white">Home</a>
 							</li>
 							<li class="float-left p-5">
-								<a href="authors.html" class="border-b-4 border-[#FF9900] p-5 hover:text-white" id="dropdown">Authors</a>
+								<a href="authors.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white" id="dropdown">Authors</a>
 							</li>
 							<li class="float-left p-5">
 								<a href="" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Apps</a>
@@ -27,7 +27,7 @@
 								<a href="" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">About</a>
 							</li>
 							<li class="float-left p-5">
-								<a href="contact.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Contact</a>
+								<a href="contact.html" class="border-b-4 border-[#FF9900] p-5 hover:text-white">Contact</a>
 							</li>
 						</ul>
 					</div>
@@ -79,61 +79,32 @@
 				</div>
 			</section>
 		</div>
-		<!-- collection grid -->
+		<!-- contact form -->
+		<form action="POST" class="bg-[#FFF8E5] p-5">
+			<h1 class="flex mx-10 md:text-3xl text-xl font-extrabold">Talk To Us</h1>
+			<div class="flex mx-10">
+				<div class="md:grid md:grid-cols-3 md:gap-4 grid grid-cols-1 gap-4 w-full">
+					<div class="col-span-1 relative">
+						<label for="username" class="flex absolute text-xl md:text-2xl">Full Name *</label>
+						<input id="username" name="username" type="text" placeholder="Your Name" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md mr-5 p-2 mt-8 w-full" required />
+					</div>
+					<div class="col-span-1 relative">
+						<label for="email" class="flex absolute text-xl md:text-2xl">Email *</label>
+						<input id="email" type="email" placeholder="Email" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-2 h-min mt-8 w-full" required />
+					</div>
+					<div class="col-span-1 relative">
+						<label for="Phone" class="flex absolute text-xl md:text-2xl">Phone *</label>
+						<input type="tel" id="Phone" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-2 h-min mt-8 w-full" placeholder="+230 5067 4239" required />
+					</div>
+				</div>
+			</div>
+			<div class="mx-10 relative">
+				<label for="message" class="flex absolute text-xl md:text-2xl">Message *</label>
+				<textarea id="message" name="message" placeholder="Your message..." class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-4 mt-8 w-full" required> </textarea>
+			</div>
+			<button type="submit" href="/" class="flex hover:bg-[#ff9d00] bg-[#FFB800] py-3 px-4 text-white rounded-md font-extrabold mx-10 my-3 w-auto text-center text-2xl">Send Message</button>
+		</form>
 
-		<div class="grid grid-rows-4 gap-4 grid-flow-col mx-10">
-			<!-- section 1 -->
-			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
-				<div class="lg:hidden w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Ronnie Ineza</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
-					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#0096C7] hover:bg-[#01c0ff] mt-5">Click Here!</button>
-				</div>
-				<div class="hidden lg:block w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-			</div>
-
-			<!-- section 2 -->
-			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
-				<div class="w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Seth Atorudibo</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
-					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#0096C7] hover:bg-[#01c0ff] mt-5">Click Here!</button>
-				</div>
-			</div>
-			<!-- section 3 -->
-			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
-				<div class="lg:hidden w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Brian Gathui</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
-					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#0096C7] hover:bg-[#01c0ff] mt-5">Click Here!</button>
-				</div>
-				<div class="hidden lg:block w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-			</div>
-			<!-- section 4 -->
-			<div class="grid lg:grid-cols-2 grid-row-2 gap 4">
-				<div class="w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56"></div>
-				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Nnamdi Onwuka</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
-					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#0096C7] hover:bg-[#01c0ff] mt-5">Click Here!</button>
-				</div>
-			</div>
-		</div>
 		<!-- call to action -->
 		<section class="flex bg-[#F4BE30]">
 			<div class="grid lg:grid-cols-2 gap-4 mx-auto grid-cols-1 my-4">
@@ -155,11 +126,11 @@
 					<div>
 						<header class="text-2xl">Navigation</header>
 						<ul class="list-none my-3">
-							<li><a href="home.html" class="cursor-pointer">Home</a></li>
-							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
+							<li><a href="#" class="cursor-pointer">Home</a></li>
+							<li><a href="#" class="cursor-pointer">Authors</a></li>
 							<li><a href="#" class="cursor-pointer">Apps</a></li>
 							<li><a href="#" class="cursor-pointer">About</a></li>
-							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+							<li><a href="#" class="cursor-pointer">Contact</a></li>
 						</ul>
 					</div>
 					<div>
@@ -194,7 +165,7 @@
 							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
 							<li><a href="#" class="cursor-pointer">Apps</a></li>
 							<li><a href="#" class="cursor-pointer">About</a></li>
-							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+							<li><a href="#" class="cursor-pointer">Contact</a></li>
 						</ul>
 					</div>
 					<div>
