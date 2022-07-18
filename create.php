@@ -2,7 +2,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="ip2_contact";
+$dbname="contact";
 
 try{
 
@@ -16,12 +16,8 @@ catch(PDOException $e){
     echo "Connection failed: " . $e->getMessage();
 
 }
-$query = $conn ->prepare("CREATE TABLE Messages (id int(6) NOT NULL
-<<<<<<< HEAD
-auto_increment,name varchar(30) NOT NULL,email varchar(30) NOT NULL, phone varchar(30) NOT NULL, message varchar(30) NOT NULL,PRIMARY
-=======
-auto_increment,name varchar(30) NOT NULL, NOT NULL,email varchar(30) NOT NULL, phone varchar(30) NOT NULL, messages varchar(30) NOT NULL,PRIMARY
->>>>>>> 52694968c9aa4b0b15723e529a9e81f9b15d91b7
+$query=$conn->prepare("CREATE TABLE messages (id int(6) NOT NULL
+auto_increment,name varchar(20) NOT NULL,email varchar(30) NOT NULL,phone_number int(15) NOT NULL,message varchar(30) NOT NULL,PRIMARY
 KEY (id),UNIQUE id (id),KEY id_2 (id))");
 
 $query -> execute();

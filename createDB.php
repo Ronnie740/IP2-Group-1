@@ -14,7 +14,7 @@ try {
   echo "Connection failed: " . $e->getMessage();
   }
 
-$query=$conn->prepare("CREATE DATABASE ip2_contact");
+$query=$conn->prepare("CREATE DATABASE contact");
 $query->execute();
 $conn = null;
 ?>

@@ -80,7 +80,7 @@
 			</section>
 		</div>
 		<!-- contact form -->
-		<form action="contact.php" method="POST" class="bg-[#FFF8E5] p-5">
+		<!-- <form action="test.php" method="POST" class="bg-[#FFF8E5] p-5">
 			<h1 class="flex mx-10 md:text-3xl text-xl font-extrabold">Talk To Us</h1>
 			<div class="flex mx-10">
 				<div class="md:grid md:grid-cols-3 md:gap-4 grid grid-cols-1 gap-4 w-full">
@@ -93,8 +93,8 @@
 						<input name="email " id="email" type="email" placeholder="Email" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-2 h-min mt-8 w-full" required />
 					</div>
 					<div class="col-span-1 relative">
-						<label for="phone" class="flex absolute text-xl md:text-2xl">Phone *</label>
-						<input type="tel" name="phone" id="phone" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-2 h-min mt-8 w-full" placeholder="+230 5067 4239" required />
+						<label for="phone_number" class="flex absolute text-xl md:text-2xl">Phone *</label>
+						<input type="number" name="phone_number" id="phone_number" class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-2 h-min mt-8 w-full" placeholder="+230 5067 4239" required />
 					</div>
 				</div>
 			</div>
@@ -103,7 +103,67 @@
 				<textarea id="message" name="message" placeholder="Your message..." class="bg-white shadow-md shadow-[#9d9d9d] rounded-md p-4 mt-8 w-full" required> </textarea>
 			</div>
 			<button type="submit" href="/" class="flex hover:bg-[#ff9d00] bg-[#FFB800] py-3 px-4 text-white rounded-md font-extrabold mx-10 my-3 w-auto text-center text-2xl">Send Message</button>
+		</form> -->
+		<!-- form -->
+		<form action="send.php" method="POST" class="pt-5 bg-[#FFF8E5]">
+			<h1 class="flex mx-10 md:text-3xl text-xl font-extrabold">Contact Us</h1>
+			<div class="flex mx-10">
+				<div class="md:grid md:grid-cols-3 md:gap-4 grid grid-cols-1 gap-4 w-full">
+					<div class="col-span-1 relative">
+						<label for="name" class="flex absolute text-xl md:text-2xl">Full Name *</label>
+						<input id="name" name="name" type="text" placeholder="Enter Full Name" class="border-2 rounded-md mr-5 p-2 mt-8 w-full" required />
+					</div>
+					<div class="col-span-1 relative">
+						<label for="email" class="flex absolute text-xl md:text-2xl">Email *</label>
+						<input id="email" name="email" type="email" placeholder="Enter Email Address" class="border-2 rounded-md p-2 h-min mt-8 w-full" required />
+					</div>
+					<div class="col-span-1 relative">
+						<label for="phone_number" class="flex absolute text-xl md:text-2xl">Phone *</label>
+						<input type="number" name="phone_number" id="phone_number" class="border-2 rounded-md p-2 h-min mt-8 w-full" placeholder="+230 5677 8439" required />
+					</div>
+				</div>
+			</div>
+			<div class="mx-10 relative">
+				<label for="message" class="flex absolute text-xl md:text-2xl">Message *</label>
+				<textarea id="message" name="message" placeholder="Your message..." class="border-2 rounded-md p-4 mt-8 w-full" required> </textarea>
+			</div>
+			<div class="flex">
+				<!-- value = Send Message -->
+				<input
+					id="send"
+					name="send"
+					type="submit"
+					value="Submit"
+					class="cursor-pointer hover:bg-[#1a7593] bg-[#0096C7] py-3 px-4 text-white rounded-full font-extrabold mx-auto my-3 w-auto text-center text-2xl"
+					required
+				/>
+			</div>
 		</form>
+
+		<!-- chat Header -->
+		<div class="flex my-5 md:text-4xl text-xl">
+			<h1 class="text-center mx-auto font-extrabold">
+				Interact with the Community<br />
+				Leave a Comment!
+			</h1>
+		</div>
+		<!-- Disqus chat -->
+		<div id="disqus_thread" class="w-full px-10"></div>
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = "CHAT"; // required: replace example with your forum shortname
+
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function () {
+				var dsq = document.createElement("script");
+				dsq.type = "text/javascript";
+				dsq.async = true;
+				dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+				(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 		<!-- call to action -->
 		<section class="flex bg-[#F4BE30]">
