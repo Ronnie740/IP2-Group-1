@@ -1,0 +1,120 @@
+<main>
+	<div class="w-full h-auto">
+		<h1 class="flex text-3xl font-extrabold justify-center">Covid 19 Information</h1>
+		<div class="lg:grid lg:grid-cols-4 lg:gap-5 grid grid-cols-1 gap-5mx-10 justify-center my-5 text-2xl font-bold" id="api_info"></div>
+		<div class="w-[85%] mx-auto">
+			<canvas id="myChart" class="w-full" width="2223" height="1110" style="display: block; box-sizing: border-box; height: 555px; width: 1111.5px"></canvas>
+		</div>
+	</div>
+	<!-- fetch api data -->
+	<script>
+		$(function () {
+			// Get Covid 19 Information
+			fetch("https://api.covid19api.com/summary")
+				.then((response) => response.json())
+				.then((data) => {
+					const country = data.Countries[111];
+					const active = country.TotalConfirmed - country.TotalRecovered - country.TotalDeaths;
+					$("#api_info").addClass("lg:grid lg:grid-cols-4 lg:gap-5  grid grid-cols-1 gap-5mx-10 justify-center my-5 text-2xl font-bold");
+					$("#api_info").html(
+						`
+                            <div class=" col-span-1">
+                                    <p class="text-center">Confirmed <br /> Cases: <br /> ${country.TotalConfirmed}</p>
+                            </div>
+                            <div class="col-span-1">
+                                    <p class="text-center">Total <br /> Deaths:  <br /> ${country.TotalDeaths}</p>
+                            </div>
+                            <div class="col-span-1">
+                                    <p class="text-center">Total <br /> Recovered: <br /> ${country.TotalRecovered}</p>
+                            </div>
+                            <div class="col-span-1">
+                                    <p class="text-center">Active <br /> Cases: <br />` +
+							active +
+							` </p>
+                            </div>`
+					);
+				});
+		});
+	</script>
+	<!-- create chart -->
+	<script>
+		// https://api.covid19api.com/dayone/country/mauritius/status/confirmed/live
+		fetch("https://api.covid19api.com/dayone/country/Mauritius")
+			.then((response) => response.json())
+			.then((data) => {
+				const date = data.map((data) => data.Date);
+				//const deaths = data.map((data) => data.Deaths);
+				const deaths = data.map((day, index) => {
+					if (index) return Math.abs(day.Deaths - data[index - 1].Deaths);
+					else day.Deaths;
+				});
+				// const confirmed = data.map((data) => data.Confirmed);
+				const confirmed = data.map((day, index) => {
+					if (index) return Math.abs(day.Confirmed - data[index - 1].Confirmed);
+					else day.Confirmed;
+				});
+				// const recovered = data.map((data) => data.Recovered);
+				const recovered = data.map((day, index) => {
+					if (index) return Math.abs(day.Recovered - data[index - 1].Recovered);
+					else day.Recovered;
+				});
+				// const active = data.map((data) => data.Active);
+				const active = data.map((day, index) => {
+					if (index) return Math.abs(day.Active - data[index - 1].Active);
+					else day.Active;
+				});
+				console.log(data);
+
+				const ctx = document.getElementById("myChart").getContext("2d");
+				const myChart = new Chart(ctx, {
+					type: "bar",
+					data: {
+						labels: date,
+						datasets: [
+							{
+								label: "Daily Covid Cases",
+								data: confirmed,
+								backgroundColor: "transparent",
+								borderColor: "red",
+								borderWidth: 2,
+							},
+							{
+								label: "Daily Recoveries Cases",
+								data: recovered,
+								backgroundColor: "transparent",
+								borderColor: "blue",
+								borderWidth: 2,
+							},
+							{
+								label: "Active Cases",
+								data: active,
+								backgroundColor: "transparent",
+								borderColor: "yellow",
+								borderWidth: 2,
+							},
+							{
+								label: "Daily Deaths",
+								data: deaths,
+								backgroundColor: "transparent",
+								borderColor: "green",
+								borderWidth: 2,
+							},
+						],
+					},
+					options: {
+						elements: {
+							line: {
+								tension: 0,
+							},
+						},
+						responsive: true,
+						scales: {
+							y: {
+								beginAtZero: true,
+							},
+						},
+					},
+				});
+			});
+	</script>
+</main>
