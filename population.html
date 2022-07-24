@@ -13,7 +13,7 @@
 		<div id="bg" class="bg-cover bg-center overflow-auto bg-[#000135]">
 			<header class="flex">
 				<nav class="flex-grow text-white">
-					<img src="" alt="Website_Logo" class="float-left w-auto h-40 p-5" />
+					<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
 					<div class="hidden lg:block">
 						<ul class="list-none justify-center float-right text-2xl text-center p-5 z-0">
 							<li class="float-left p-5">
@@ -72,12 +72,13 @@
 				<div class="flex flex-col mb-24 md:mb-32">
 					<h1 class="md:text-6xl sm:text-4xl text-3xl ml-10 lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Population App</h1>
 					<p class="md:text-3xl sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+						Below is our interactive population graph. You can use the input boxes to choose the three countries you want to compare and click the send button, the app will then show the
+						populations of the countries.
 					</p>
-					<button class="mx-auto my-auto rounded-md text-white p-5 bg-[#0096C7] hover:bg-[#01c0ff] mt-5">Click Here!</button>
 				</div>
-				<div class="w-auto lg:h-auto bg-white rounded-md m-5 h-56"></div>
+				<div class="hidden lg:block w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56 relative">
+					<img src="./images/IP2 Coursework Files/Images/2_Population.jpg" alt="covid" class="absolute h-full w-full rounded-md shadow-lg" srcset="" />
+				</div>
 			</section>
 		</div>
 		<!-- Main -->
@@ -85,22 +86,22 @@
 		<main>
 			<div class="w-full h-auto">
 				<h1 class="flex text-3xl font-extrabold justify-center">Information</h1>
-				<div class="lg:grid lg:grid-cols-4 lg:gap-5 grid grid-cols-1 gap-5mx-10 justify-center my-5 text-2xl mx-5" id="api_info">
-					<div>
+				<div class="lg:grid lg:grid-cols-4 lg:gap-5 grid grid-cols-1 gap-5 my-5 text-2xl mx-5" id="api_info">
+					<div class="mx-auto">
 						<input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont1" />
 					</div>
-					<div>
+					<div class="mx-auto">
 						<input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont2" />
 					</div>
-					<div>
+					<div class="mx-auto">
 						<input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont3" />
 					</div>
-					<div>
+					<div class="mx-auto">
 						<!-- <input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont4" /> -->
 						<button onclick="getText()" class="bg-[#0096C7] px-10 py-2 rounded-md hover:bg-[#01c0ff] text-white">Send</button>
 					</div>
 				</div>
-				<div class="w-[85%] mx-auto" id="space">
+				<div class="w-[85%] mx-auto hidden" id="space">
 					<canvas id="myChart" class="w-full" width="2223" height="1110" style="display: block; box-sizing: border-box; height: 555px; width: 1111.5px"></canvas>
 				</div>
 			</div>
@@ -133,7 +134,7 @@
 				// 		);
 				// 	});
 
-				var cont1, cont2, cont3;
+				var cont1, cont2, cont3, space;
 				// var cont4 = document.getElementById("cont4").value;
 
 				const options = {
@@ -184,7 +185,8 @@
 					cont1 = document.getElementById("cont1").value;
 					cont2 = document.getElementById("cont2").value;
 					cont3 = document.getElementById("cont3").value;
-
+					space = document.getElementById("space");
+					space.classList.remove("hidden");
 					Promise.all([
 						fetch("https://world-population.p.rapidapi.com/population?country_name=" + cont1, options),
 						fetch("https://world-population.p.rapidapi.com/population?country_name=" + cont2, options),
@@ -359,12 +361,23 @@
 				// 	});
 			</script>
 		</main>
+		<!-- call to action -->
+		<section class="flex bg-[#F4BE30]">
+			<div class="grid lg:grid-cols-2 gap-4 mx-auto grid-cols-1 my-4">
+				<div>
+					<h1 class="md:text-4xl text-2xl text-center font-extrabold font-['Nunito',sans-serif] my-10 mx-20 text-white capitalize">Check out the Covid <br />Tracker Here</h1>
+				</div>
+				<div class="flex">
+					<button class="mx-auto my-auto rounded-md text-white py-5 bg-[#FF9900] hover:bg-[#ffcf88] px-10">Click Here!</button>
+				</div>
+			</div>
+		</section>
 		<!-- footer -->
 		<footer class="bg-[#000135] text-white h-auto p-5">
 			<div class="flex">
 				<div class="lg:grid grid-cols-4 gap-20 mx-auto my-5 hidden">
 					<div>
-						<img src="" alt="Logo" />
+						<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
 					</div>
 					<div>
 						<header class="text-2xl">Navigation</header>
@@ -397,9 +410,9 @@
 						</ul>
 					</div>
 				</div>
-				<div class="grid mx-auto my-5 grid-rows-4 gap-10 lg:hidden">
+				<div class="grid mx-auto my-5 grid-rows-4 lg:gap-10 gap-4 lg:hidden">
 					<div>
-						<img src="" alt="Logo" />
+						<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
 					</div>
 					<div>
 						<header class="text-2xl">Navigation</header>
