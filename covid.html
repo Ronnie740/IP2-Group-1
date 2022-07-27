@@ -170,11 +170,12 @@
 						})
 						.then(function (data) {
 							const country = data[1].Countries.map((country) => country.Country);
+							const slug = data[1].Countries.map((country) => country.Slug);
 
 							var confirmed, deaths;
 							var test = country.length;
 							for (let i = 0; i < test; i++) {
-								if (country[i] == cov1) {
+								if (country[i] == cov1 || slug[i] == cov1) {
 									confirmed = data[1].Countries[i].TotalConfirmed;
 									deaths = data[1].Countries[i].TotalDeaths;
 									console.log(confirmed + " " + deaths);
@@ -295,6 +296,20 @@
 				}
 			</script>
 		</main>
+		<!-- call to action -->
+		<section class="flex bg-[#F4BE30]">
+			<div class="grid lg:grid-cols-2 gap-4 mx-auto grid-cols-1 my-4">
+				<div>
+					<h1 class="md:text-4xl text-2xl text-center font-extrabold font-['Nunito',sans-serif] my-10 mx-20 text-white capitalize">
+						Check Out the Weather<br />
+						App Here!
+					</h1>
+				</div>
+				<div class="flex">
+					<button class="mx-auto my-auto rounded-md text-white py-5 bg-[#FF9900] hover:bg-[#ffcf88] px-10">Click Here!</button>
+				</div>
+			</div>
+		</section>
 		<!-- footer -->
 		<footer class="bg-[#000135] text-white h-auto p-5">
 			<div class="flex">
