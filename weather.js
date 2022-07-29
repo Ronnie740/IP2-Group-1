@@ -60,7 +60,7 @@ function getWeatherTxt() {
 			$("#space1").removeClass("hidden");
 			$("#vis").append(`
 
-            <div class="lg:col-span-1 row-span-1 w-auto h-auto mx-auto my-auto">
+            <div class="lg:col-span-1 row-span-1 lg:row-span-2 w-auto h-auto mx-auto my-auto">
             <!--Date and time-->
             <h1 class="text-xl text-slate-300 flex justify-center text-center" id="date">${fromdt.toUTCString()}</h1>
             <!--icon and temp-->
@@ -88,7 +88,7 @@ function getWeatherTxt() {
                 </div>
             </div>
         </div>
-        <div class="lg:col-span-2 row-span-2" >
+        <div class="lg:col-span-2 row-span-2 " >
             <div class = "flex flex-col space-y-10 w-full h-auto">
 
                 <!-- Forecast Chart -->
