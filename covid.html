@@ -8,8 +8,9 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="index.js" defer></script>
 	</head>
-	<body class="overflow-auto font-['Nunito',sans-serif]">
+	<body class="overflow-auto font-['Nunito',sans-serif] relative z-0">
 		<div id="bg" class="bg-cover bg-center overflow-auto bg-[#000135]">
 			<header class="flex">
 				<nav class="flex-grow text-white">
@@ -20,13 +21,23 @@
 								<a href="index.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 text-white">Home</a>
 							</li>
 							<li class="float-left p-5">
-								<a href="authors.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white" id="dropdown">Authors</a>
+								<a href="authors.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Authors</a>
 							</li>
 							<li class="float-left p-5">
-								<a href="apps.html" class="border-b-4 border-[#FF9900] p-5 hover:text-white">Apps</a>
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer" id="dropdown-1">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="ul-1">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
 							</li>
 							<li class="float-left p-5">
-								<a href="about.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">About</a>
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer" id="about-dropdown-nav">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="about-ul-nav">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
 							</li>
 							<li class="float-left p-5">
 								<a href="contact.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Contact</a>
@@ -48,19 +59,29 @@
 					<!-- Small screen nav bar -->
 					<div class="bg-blue-900 w-full rounded-md absolute mt-20 hidden" id="navSm">
 						<div class="w-full">
-							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
 								<a href="./index.html"> <span>Home</span></a>
 							</div>
-							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-600">
-								<a href="authors.html" class="rounded-md hover:text-white" id="smDropdown">Authors</a>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500">
+								<a href="authors.html" class="rounded-md hover:text-white">Authors</a>
 							</div>
-							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
-								<a href="apps.html"> <span>Apps</span></a>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500">
+								<span class="hover:text-white cursor-pointer" id="dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
 							</div>
-							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
-								<a href="about.html"> <span>About</span></a>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
+								<span class="hover:text-white cursor-pointer" id="about-dropdown-2">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
 							</div>
-							<div class="px-3 py-2 rounded text-white hover:bg-blue-600">
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
 								<a href="contact.html"> <span>Contact</span></a>
 							</div>
 						</div>
@@ -97,6 +118,7 @@
 					<canvas id="myChart" class="w-full" width="2223" height="1110" style="display: block; box-sizing: border-box; height: 555px; width: 1111.5px"></canvas>
 				</div>
 			</div>
+
 			<!-- <script>
 				fetch("https://api.covid19api.com/summary")
 					.then((response) => response.json())
@@ -306,7 +328,7 @@
 					</h1>
 				</div>
 				<div class="flex">
-					<button class="mx-auto my-auto rounded-md text-white py-5 bg-[#FF9900] hover:bg-[#ffcf88] px-10">Click Here!</button>
+					<a href="weather.html" class="mx-auto my-auto rounded-md text-white py-5 bg-[#FF9900] hover:bg-[#ffcf88] px-10">Click Here!</a>
 				</div>
 			</div>
 		</section>
@@ -320,10 +342,24 @@
 					<div>
 						<header class="text-2xl">Navigation</header>
 						<ul class="list-none my-3">
-							<li><a href="home.html" class="cursor-pointer">Home</a></li>
+							<li><a href="index.html" class="cursor-pointer">Home</a></li>
 							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
-							<li><a href="#" class="cursor-pointer">Apps</a></li>
-							<li><a href="#" class="cursor-pointer">About</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
 							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
 						</ul>
 					</div>
@@ -348,7 +384,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="grid mx-auto my-5 grid-rows-4 gap-10 lg:hidden">
+				<div class="mx-auto my-5 flex flex-col space-y-5 lg:hidden">
 					<div>
 						<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
 					</div>
@@ -357,8 +393,22 @@
 						<ul class="list-none my-3">
 							<li><a href="index.html" class="cursor-pointer">Home</a></li>
 							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
-							<li><a href="apps.html" class="cursor-pointer">Apps</a></li>
-							<li><a href="about.html" class="cursor-pointer">About</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
 							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
 						</ul>
 					</div>
