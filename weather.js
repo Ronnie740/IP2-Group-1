@@ -1,7 +1,7 @@
 function getWeatherTxt() {
 	const country = document.getElementById("country").value;
 
-	Promise.all([fetch("http://api.weatherapi.com/v1/forecast.json?key=99b6f193ebd642889c5150710221307&q=" + country + "&days=5&aqi=no&alerts=no"), fetch("./icons.json")])
+	Promise.all([fetch("https://api.weatherapi.com/v1/forecast.json?key=99b6f193ebd642889c5150710221307&q=" + country + "&days=5&aqi=no&alerts=no"), fetch("./icons.json")])
 		.then(function (responses) {
 			// Get a JSON object from each of the responses
 			return Promise.all(
