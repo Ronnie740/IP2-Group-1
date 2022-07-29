@@ -23,7 +23,7 @@ function getWeatherTxt() {
 
 			if (document.getElementById("space1").hasChildNodes) {
 				document.getElementById("space1").removeChild(document.getElementById("space1").childNodes[0]);
-				document.getElementById("space1").innerHTML = ` <div class="grid grid-cols-3 gap-5 mx-10" id="vis">`;
+				document.getElementById("space1").innerHTML = ` <div class="grid lg:grid-cols-3 lg:grid-rows-none grid-rows-3 gap-5 mx-10" id="vis">`;
 			}
 			//get correct icon
 			if (currentCondition.indexOf("rain") != -1 || currentCondition.indexOf("Rain") != -1) {
@@ -60,18 +60,18 @@ function getWeatherTxt() {
 			$("#space1").removeClass("hidden");
 			$("#vis").append(`
 
-            <div class="col-span-1 w-auto h-auto mx-auto my-auto">
+            <div class="lg:col-span-1 row-span-1 w-auto h-auto mx-auto my-auto">
             <!--Date and time-->
             <h1 class="text-xl text-slate-300 flex justify-center text-center" id="date">${fromdt.toUTCString()}</h1>
             <!--icon and temp-->
             <div class="grid grid-cols-2 gap-4 my-5">
-                <div class="h-20 w-20 mx-auto" id="icon">
+                <div class="md:h-20 md:w-20 h-10 w-10 mx-auto" id="icon">
                     <img src="./images/${icon}" alt="${currentCondition}" class="w-full h-full" />
                 </div>
-                <div class="text-6xl font-bold my-auto" id="temp">${currentTemp}°c</div>
+                <div class="md:text-6xl text-4xl font-bold my-auto" id="temp">${currentTemp}°c</div>
             </div>
             <!--weather condition-->
-            <div class="text-4xl font-bold flex justify-center text-center" id="weather">
+            <div class="md:text-4xl text-2xl font-bold flex justify-center text-center" id="weather">
                 <p>${currentCondition}</p>
             </div>
             <!--wind speed and humidity-->
@@ -79,16 +79,16 @@ function getWeatherTxt() {
                 <!--humidity-->
                 <div class="w-full">
                     <p class="text-xl text-slate-300 text-center">Humidity</p>
-                    <p class="text-2xl text-center" id="wind">${currentHumidity} %</p>
+                    <p class="md:text-2xl text-xl text-center" id="wind">${currentHumidity} %</p>
                 </div>
                 <!--wind speed-->
                 <div class="w-full">
                     <p class="text-xl text-slate-300 text-center">Wind Speed</p>
-                    <p class="text-2xl text-center" id="wind">${currentWindSpeed} km/j</p>
+                    <p class="md:text-2xl text-xl text-center" id="wind">${currentWindSpeed} km/j</p>
                 </div>
             </div>
         </div>
-        <div class="col-span-2" >
+        <div class="lg:col-span-2 row-span-2" >
             <div class = "flex flex-col space-y-10 w-full h-auto">
 
                 <!-- Forecast Chart -->
@@ -134,7 +134,7 @@ function getWeatherTxt() {
 				//append forecast data to html
 				$("#forecast").append(`
 
-                                    <div class ="flex flex-col space-y-4 bg-blue-400 text-white w-fit  h-fit p-5 rounded-md">
+                                    <div class ="flex flex-col space-y-4 bg-blue-400 text-white w-fit mx-auto  h-fit p-5 rounded-md">
                                             <p class="text-center" id="day">${forecastDays}</p>
                                             <div class="h-10 w-10 mx-auto" id="icon">
                                                 <img src="./images/${forecastIcon}" alt="${forecastCondition}" class="w-full h-full" />
