@@ -1,0 +1,9 @@
+{
+	"sun": "sun.png",
+	"cloud": "cloudy.png",
+	"rain": "rainy.png",
+	"wind": "wind.png",
+	"snow": "snowflake.png",
+	"clear": "clear-sky.png",
+	"default": "overcast.png"
+}

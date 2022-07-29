@@ -106,7 +106,7 @@
 			<div class="w-full h-auto">
 				<h1 class="flex text-3xl font-extrabold justify-center">Covid 19 Information</h1>
 				<div class="flex flex-col space-y-5 mt-4">
-					<input type="text" class="border-2 border-slate-400 rounded-md text-center mx-auto" placeholder="Enter Country" id="cov1" />
+					<input type="text" class="border-2 border-slate-400 rounded-full text-center mx-auto" placeholder="Enter Country" id="cov1" />
 					<div class="mx-auto">
 						<!-- <input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont4" /> -->
 						<button onclick="getCovTxt()" class="bg-[#0096C7] px-10 py-2 rounded-md hover:bg-[#01c0ff] text-white">Send</button>
@@ -196,6 +196,9 @@
 
 							var confirmed, deaths;
 							var test = country.length;
+							if ($("#api_info").hasChildNodes) {
+								$("#api_info").removeChild($("#api_info").childNodes[0]);
+							}
 							for (let i = 0; i < test; i++) {
 								if (country[i] == cov1 || slug[i] == cov1) {
 									confirmed = data[1].Countries[i].TotalConfirmed;
@@ -206,9 +209,8 @@
 									$("#api_info").addClass("flex justify-center my-5 text-2xl font-bold");
 									$("#api_info").html(
 										`
-                            <div class=" col-span-1 mx-autoxs">
+                            <div class=" col-span-1 mx-auto ">
                                     <p class="text-center">Confirmed <br /> Cases: <br /> ${confirmed.toLocaleString()}</p>
-                            </div>
                             </div>`
 									);
 									break;
