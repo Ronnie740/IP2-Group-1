@@ -2,15 +2,484 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Title</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IP2 Group 1</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="index.js" defer></script>
 	</head>
-	<body>
+	<body class="overflow-auto font-['Nunito',sans-serif] relative z-0">
+		<div id="bg" class="bg-cover bg-center overflow-auto bg-[#000135]">
+			<header class="flex">
+				<nav class="flex-grow text-white">
+					<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
+					<div class="hidden lg:block">
+						<ul class="list-none justify-center float-right text-2xl text-center p-5 z-0">
+							<li class="float-left p-5">
+								<a href="index.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 text-white">Home</a>
+							</li>
+							<li class="float-left p-5">
+								<a href="authors.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Authors</a>
+							</li>
+							<li class="float-left p-5">
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer" id="dropdown-1">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="ul-1">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li class="float-left p-5">
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer" id="about-dropdown-nav">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="about-ul-nav">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li class="float-left p-5">
+								<a href="contact.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white">Contact</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Small screen navigation -->
+					<div class="float-right lg:hidden pr-4">
+						<button class="hover:bg-blue-900 rounded-md hover:text-white px-1 my-10 nav-toggler focus:outline-none" id="menuIcon">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 lx-10" viewBox="0 0 20 20" fill="currentColor">
+								<path
+									fill-rule="evenodd"
+									d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<!-- Small screen nav bar -->
+					<div class="bg-blue-900 w-full rounded-md absolute mt-20 hidden" id="navSm">
+						<div class="w-full">
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
+								<a href="./index.html"> <span>Home</span></a>
+							</div>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500">
+								<a href="authors.html" class="rounded-md hover:text-white">Authors</a>
+							</div>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500">
+								<span class="hover:text-white cursor-pointer" id="dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
+								<span class="hover:text-white cursor-pointer" id="about-dropdown-2">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500">
+								<a href="contact.html"> <span>Contact</span></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+
+			<section class="grid lg:grid-cols-2 grid-row-2 gap 4 text-white" id="title">
+				<div class="flex flex-col mb-24 md:mb-32">
+					<h1 class="md:text-6xl sm:text-4xl text-3xl ml-10 lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Weather App</h1>
+					<p class="md:text-3xl sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+						Below is our interactive population graph. You can use the input boxes to choose the three countries you want to compare and click the send button, the app will then show the
+						populations of the countries.
+					</p>
+				</div>
+				<div class="hidden lg:block w-auto lg:h-auto bg-blue-600 rounded-md m-5 h-56 relative">
+					<img src="./images/IP2 Coursework Files/Images/4_Weather_Umbrellas.jpg" alt="covid" class="absolute h-full w-full rounded-md shadow-lg" srcset="" />
+				</div>
+			</section>
+		</div>
+		<!-- Main -->
+
+		<main>
+			<div class="w-full h-auto my-5">
+				<h1 class="flex text-3xl font-extrabold justify-center">Information</h1>
+				<div class="flex flex-col space-y-5 mt-4" id="input">
+					<input type="text" class="border-2 border-slate-400 rounded-full text-center mx-auto" placeholder="Enter Country/City" id="country" />
+					<div class="mx-auto">
+						<!-- <input type="text" class="border-2 border-slate-400 rounded-md text-center" placeholder="Enter Country" id="cont4" /> -->
+						<button onclick="getWeatherTxt()" class="bg-[#0096C7] px-10 py-2 rounded-md hover:bg-[#01c0ff] text-white">Send</button>
+					</div>
+				</div>
+				<!-- Visulization for weather -->
+				<!-- <div class="grid grid-cols-3 gap-5" id="vis">
+					<div class="col-span-1 w-auto h-auto mx-auto">
+						Date and time
+						<h1 class="text-xl text-slate-300 flex justify-center" id="date">2022-07-29 18:00</h1>
+						icon and temp
+						<div class="grid grid-cols-2 gap-4 my-5">
+							<div class="h-20 w-20 mx-auto" id="icon">
+								<img src="./images/cloudy.png" alt="cloudy" class="w-full h-full" />
+							</div>
+							<div class="text-6xl font-bold my-auto" id="temp">72°c</div>
+						</div>
+						weather condition
+						<div class="text-4xl font-bold flex justify-center" id="weather">
+							<p>Cloudy</p>
+						</div>
+						wind speed and humidity
+						<div class="grid grid-cols-2 gap-2">
+							humidity
+							<div class="w-full">
+								<p class="text-xl text-slate-300 text-center">Humidity</p>
+								<p class="text-2xl text-center" id="wind">45 %</p>
+							</div>
+							wind speed
+							<div class="w-full">
+								<p class="text-xl text-slate-300 text-center">Wind Speed</p>
+								<p class="text-2xl text-center" id="wind">2.5 m/s</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-span-2"></div>
+				</div> -->
+
+				<div class="hidden" id="space1">
+					<div class="grid grid-cols-3 gap-5 mx-10" id="vis"></div>
+				</div>
+			</div>
+		</main>
+		<!-- call to action -->
+		<section class="flex bg-[#F4BE30]">
+			<div class="grid lg:grid-cols-2 gap-4 mx-auto grid-cols-1 my-4">
+				<div>
+					<h1 class="md:text-4xl text-2xl text-center font-extrabold font-['Nunito',sans-serif] my-10 mx-20 text-white capitalize">Like Our Applications <br />Checkout Our Authors</h1>
+				</div>
+				<div class="flex">
+					<a href="authors.html" class="mx-auto my-auto rounded-md text-white py-5 bg-[#FF9900] hover:bg-[#ffcf88] px-10">Click Here!</a>
+				</div>
+			</div>
+		</section>
 		<script>
-			fetch("http://api.weatherapi.com/v1/forecast.json?key=99b6f193ebd642889c5150710221307&q=London&days=5&aqi=no&alerts=no")
-				.then((response) => response.json())
-				.then((data) => {
-					console.log(data);
-				});
+			function getWeatherTxt() {
+				const country = document.getElementById("country").value;
+
+				Promise.all([fetch("http://api.weatherapi.com/v1/forecast.json?key=99b6f193ebd642889c5150710221307&q=" + country + "&days=5&aqi=no&alerts=no"), fetch("./icons.json")])
+					.then(function (responses) {
+						// Get a JSON object from each of the responses
+						return Promise.all(
+							responses.map(function (response) {
+								return response.json();
+							})
+						);
+					})
+					.then((data) => {
+						console.log(data[0]);
+						console.log(data[1]);
+						// console.log(data.current.temp_c);
+						const currentTemp = data[0].current.temp_c;
+						const currentCondition = data[0].current.condition.text;
+						const currentHumidity = data[0].current.humidity;
+						const currentWindSpeed = data[0].current.wind_kph;
+						const currentDate = data[0].location.localtime;
+						var icon = "";
+
+						if (document.getElementById("space1").hasChildNodes) {
+							document.getElementById("space1").removeChild(document.getElementById("space1").childNodes[0]);
+							document.getElementById("space1").innerHTML = ` <div class="grid grid-cols-3 gap-5 mx-10" id="vis">`;
+						}
+						//get correct icon
+						if (currentCondition.indexOf("rain") != -1 || currentCondition.indexOf("Rain") != -1) {
+							icon = data[1].rain;
+						} else if (currentCondition.indexOf("sun") != -1 || currentCondition.indexOf("Sun") != -1) {
+							icon = data[1].sun;
+						} else if (currentCondition.indexOf("cloud") != -1 || currentCondition.indexOf("Cloud") != -1) {
+							icon = data[1].cloud;
+						} else if (currentCondition.indexOf("wind") != -1 || currentCondition.indexOf("Wind") != -1) {
+							icon = data[1].wind;
+						} else if (currentCondition.indexOf("snow") != -1 || currentCondition.indexOf("Snow") != -1) {
+							icon = data[1].snow;
+						} else if (currentCondition.indexOf("clear") != -1 || currentCondition.indexOf("Clear") != -1) {
+							icon = data[1].clear;
+						} else {
+							icon = data[1].default;
+						}
+						console.log(icon);
+
+						// Format date
+						var d = currentDate + ":00";
+						var d1 = d.split(" ");
+						var date = d1[0].split("-");
+						var time = d1[1].split(":");
+						var dd = date[2];
+						var mm = date[1] - 1;
+						var yy = date[0];
+						var hh = time[0];
+						var min = time[1];
+						var ss = time[2];
+						var ms = 0;
+						var fromdt = new Date(yy, mm, dd, hh, min, ss, ms);
+
+						$("#space1").removeClass("hidden");
+						$("#vis").append(`
+
+						<div class="col-span-1 w-auto h-auto mx-auto my-auto">
+						<!--Date and time-->
+						<h1 class="text-xl text-slate-300 flex justify-center text-center" id="date">${fromdt.toUTCString()}</h1>
+						<!--icon and temp-->
+						<div class="grid grid-cols-2 gap-4 my-5">
+							<div class="h-20 w-20 mx-auto" id="icon">
+								<img src="./images/${icon}" alt="${currentCondition}" class="w-full h-full" />
+							</div>
+							<div class="text-6xl font-bold my-auto" id="temp">${currentTemp}°c</div>
+						</div>
+						<!--weather condition-->
+						<div class="text-4xl font-bold flex justify-center text-center" id="weather">
+							<p>${currentCondition}</p>
+						</div>
+						<!--wind speed and humidity-->
+						<div class="grid grid-cols-2 gap-2">
+							<!--humidity-->
+							<div class="w-full">
+								<p class="text-xl text-slate-300 text-center">Humidity</p>
+								<p class="text-2xl text-center" id="wind">${currentHumidity} %</p>
+							</div>
+							<!--wind speed-->
+							<div class="w-full">
+								<p class="text-xl text-slate-300 text-center">Wind Speed</p>
+								<p class="text-2xl text-center" id="wind">${currentWindSpeed} km/j</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-span-2" >
+						<div class = "flex flex-col space-y-10 w-full h-auto">
+
+							<!-- Forecast Chart -->
+				<div class="w-[85%] mx-auto " id="space">
+					<canvas id="myChart" class="w-full h-full" style="display: block; box-sizing: border-box"></canvas>
+				</div>
+
+							<!-- container for weekly data -->
+
+							<div class = "grid grid-cols-3 gap-5 mx-5" id="forecast"></div>
+						</div>
+
+					</div>`);
+						var firstIteration = true;
+						var label = [];
+						var temp = [];
+						for (var i = 0; i < data[0].forecast.forecastday.length; i++) {
+							const forecastTemp = data[0].forecast.forecastday[i].day.avgtemp_c;
+							const forecastCondition = data[0].forecast.forecastday[i].day.condition.text;
+							const forecastDays = data[0].forecast.forecastday[i].date;
+							const forecastHumidity = data[0].forecast.forecastday[i].day.avghumidity;
+
+							label.push(forecastDays);
+							temp.push(forecastTemp);
+
+							var forecastIcon;
+							//get forecast correct icon
+							if (forecastCondition.indexOf("rain") != -1 || forecastCondition.indexOf("Rain") != -1) {
+								forecastIcon = data[1].rain;
+							} else if (forecastCondition.indexOf("sun") != -1 || forecastCondition.indexOf("Sun") != -1) {
+								forecastIcon = data[1].sun;
+							} else if (forecastCondition.indexOf("cloud") != -1 || forecastCondition.indexOf("Cloud") != -1) {
+								forecastIcon = data[1].cloud;
+							} else if (forecastCondition.indexOf("wind") != -1 || forecastCondition.indexOf("Wind") != -1) {
+								forecastIcon = data[1].wind;
+							} else if (forecastCondition.indexOf("snow") != -1 || forecastCondition.indexOf("Snow") != -1) {
+								forecastIcon = data[1].snow;
+							} else if (forecastCondition.indexOf("clear") != -1 || forecastCondition.indexOf("Clear") != -1) {
+								forecastIcon = data[1].clear;
+							} else {
+								forecastIcon = data[1].default;
+							}
+							//append forecast data to html
+							$("#forecast").append(`
+
+												<div class ="flex flex-col space-y-4 bg-blue-400 text-white w-fit  h-fit p-5 rounded-md">
+														<p class="text-center" id="day">${forecastDays}</p>
+														<div class="h-10 w-10 mx-auto" id="icon">
+															<img src="./images/${forecastIcon}" alt="${forecastCondition}" class="w-full h-full" />
+														</div>
+														<p class="text-center" id="temp">Humidity</p>
+														<p class="text-2xl text-center" id="temp">${forecastHumidity}%</p>
+												</div>
+								`);
+							// <div class ="flex flex-col space-y-4">
+							// 						<p>${forecastDays}</p>
+							// 						<div class="h-10 w-10 mx-auto" id="icon">
+							// 							<img src="./images/${forecastIcon}" alt="${forecastCondition}" class="w-full h-full" />
+							// 						</div>
+							// 						<p class="text-2xl text-center" id="temp">${forecastHumidity}%</p>
+							// 				</div>
+							// 				<div class ="flex flex-col space-y-4">
+							// 						<p>${forecastDays}</p>
+							// 						<div class="h-10 w-10 mx-auto" id="icon">
+							// 							<img src="./images/${forecastIcon}" alt="${forecastCondition}" class="w-full h-full" />
+							// 						</div>
+							// 						<p class="text-2xl text-center" id="temp">${forecastHumidity}%</p>
+							// 				</div>
+
+							// console.log(temp);
+							// console.log(text);
+						}
+						console.log(label);
+						console.log(temp);
+						// console.log(data.current.condition.text);
+						// console.log(data.forecast.forecastday[0].day.avgtemp_c);
+
+						if (document.getElementById("space").hasChildNodes) {
+							document.getElementById("space").removeChild(document.getElementById("space").childNodes[0]);
+							document.getElementById("space").innerHTML =
+								'<canvas id="myChart" class="w-full h-full"  style="display: block; box-sizing: border-box; height: 555px; width: 1111.5px"></canvas>';
+						}
+						const ctx = document.getElementById("myChart").getContext("2d");
+						const myChart = new Chart(ctx, {
+							type: "line",
+							data: {
+								labels: label,
+								datasets: [
+									{
+										label: "Average Temperature",
+										data: temp,
+										backgroundColor: "teal",
+										borderColor: "cyan",
+										borderWidth: 2,
+										fill: true,
+									},
+								],
+							},
+							options: {
+								elements: {
+									line: {
+										tension: 0.5,
+									},
+								},
+								responsive: true,
+								scales: {
+									y: {
+										beginAtZero: false,
+									},
+								},
+							},
+						});
+					})
+					.catch(function (error) {
+						// if there's an error, log it
+						console.log(error);
+					});
+			}
 		</script>
+		<!-- footer -->
+		<footer class="bg-[#000135] text-white h-auto p-5">
+			<div class="flex">
+				<div class="lg:grid grid-cols-4 gap-20 mx-auto my-5 hidden">
+					<div>
+						<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
+					</div>
+					<div>
+						<header class="text-2xl">Navigation</header>
+						<ul class="list-none my-3">
+							<li><a href="index.html" class="cursor-pointer">Home</a></li>
+							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<header class="text-2xl">Contact Information</header>
+						<ul class="list-none my-3">
+							<li>+77717000998</li>
+							<li>worldinfodeskhelp@gmail.com</li>
+						</ul>
+					</div>
+					<div>
+						<header class="text-2xl">Socials</header>
+						<ul class="list-none my-3">
+							<li class="flex">
+								<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+							<li class="flex">
+								<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mx-auto my-5 flex flex-col space-y-5 lg:hidden">
+					<div>
+						<img src="./images/IP2 Coursework Files/Logo FIles/1_Original_Logo_(Transparent)_(Dark Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5" />
+					</div>
+					<div>
+						<header class="text-2xl">Navigation</header>
+						<ul class="list-none my-3">
+							<li><a href="index.html" class="cursor-pointer">Home</a></li>
+							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<header class="text-2xl">Contact Information</header>
+						<ul class="list-none my-3">
+							<li>+77717000998</li>
+							<li>worldinfodeskhelp@gmail.com</li>
+						</ul>
+					</div>
+					<div>
+						<header class="text-2xl">Socials</header>
+						<ul class="list-none my-3">
+							<li class="flex">
+								<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+							<li class="flex">
+								<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- copyright -->
+			<div class="flex">
+				<p class="text-center mx-auto text-slate-400">&copy; 2022 WorldInfoDesk. All rights reserved.</p>
+			</div>
+		</footer>
 	</body>
 </html>
