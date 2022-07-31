@@ -98,7 +98,7 @@ function getWeatherTxt() {
 
                 <!-- container for weekly data -->
 
-                <div class = "grid grid-cols-3 gap-5 mx-5" id="forecast"></div>
+                <div class = "grid grid-flow-row lg:grid-flow-col lg:grid-cols-3 gap-5 mx-5" id="forecast"></div>
             </div>
 
         </div>`);
