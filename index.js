@@ -14,6 +14,9 @@ $("#footer-dropdown").click(function () {
 $("#footer-dropdown-2").click(function () {
 	$("#footer-ul-2").toggleClass("hidden");
 });
+$("#about-dropdown-1").click(function () {
+	$("#about-ul-1").toggleClass("hidden");
+});
 $("#about-dropdown").click(function () {
 	$("#about-ul").toggleClass("hidden");
 });
