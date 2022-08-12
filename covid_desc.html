@@ -93,10 +93,7 @@
 				<div class="flex flex-col mb-24 md:mb-32">
 					<div class="my-auto">
 						<h1 class="md:text-6xl sm:text-4xl text-3xl lg:ml-10 font-extrabold font-['Nunito',sans-serif]">About Covid App</h1>
-						<p class="md:text-3xl sm:text-2xl text-xl lg:ml-10 mt-5">
-							Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-							ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-						</p>
+						<p class="md:text-3xl sm:text-2xl text-xl lg:ml-10 mt-5">Welcome to the Covid App about page where you can find information about the APP and API behind the application.</p>
 					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
@@ -113,11 +110,15 @@
 					<img src="./images/IP2 Coursework Files/Images/5_API_Access.jpg" alt="Data_Content" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">API Access</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">API Access</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							The data used for this application was accessed through the 'Promise.all()' approach that allowed use to make multiple fetch requests to both the country summary api and
+							the daily summary api for different countries. This then allowed us to access the data from both the API's in an array where each api response is a json object. We
+							retrieved the values for the country from the users through the use of the input box and the 'value' property of that input box that was accessed once the button was
+							clicked then passed that as a variable to be used in the fetch requests to get the country that users searched for.
+						</p>
+					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
 					<img src="./images/IP2 Coursework Files/Images/5_API_Access.jpg" alt="API_Access" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
@@ -133,11 +134,14 @@
 					<img src="./images/IP2 Coursework Files/Images/6_Data_Content.jpg" alt="Data_Content" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Data Content</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">Data Content</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							The data we retrieved from the daily summary API had information on the daily cases, daily deaths and daily recoveries for each country. The country summary API had
+							information on the total cases, total deaths and total recoveries for each country. We decided to focus on the daily cases and total cases for each country in the
+							visualisation of this data.
+						</p>
+					</div>
 				</div>
 			</div>
 			<!-- section 3 -->
@@ -146,12 +150,14 @@
 					<img src="./images/IP2 Coursework Files/Images/7_Execution.jpg" alt="API_Execution" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Execution Visulization</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-						sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">Execution Visualisation</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							In order to execute this we used chart.js to create a visualisation of the data. We used the daily case for each country to create a line chart where the dates were used as
+							labels. In order to achieve this we had to use the 'map' function to iterate through the array of json objects in order to get the 'date' and 'dailyConfirmed' properties to
+							create the labels and the data that would be entered into the chart.
+						</p>
+					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
 					<img src="./images/IP2 Coursework Files/Images/7_Execution.jpg" alt="API_Execution" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />

@@ -93,10 +93,7 @@
 				<div class="flex flex-col mb-24 md:mb-32">
 					<div class="my-auto">
 						<h1 class="md:text-6xl sm:text-4xl text-3xl lg:ml-10 font-extrabold font-['Nunito',sans-serif]">About Weather App</h1>
-						<p class="md:text-3xl sm:text-2xl text-xl lg:ml-10 mt-5">
-							Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-							ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-						</p>
+						<p class="md:text-3xl sm:text-2xl text-xl lg:ml-10 mt-5">Welcome to the Weather App about page where you can find information about the APP and API behind the application.</p>
 					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
@@ -113,11 +110,16 @@
 					<img src="./images/IP2 Coursework Files/Images/5_API_Access.jpg" alt="Data_Content" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">API Access</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">API Access</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							The data used for this application was accessed through the fetch approach that allowed use to make the 2 fetch requests to the weather API to retrieve all the data for the
+							countries entered by the users as well as a fetch request to a custom json file that contained the src location of the icons that are used in the weather summary tab. This
+							then allowed us to access the data from the 2 calls in an array where each response is a json object. We retrieved the values for each country from the users through the
+							use of the input box and the 'value' property of that input box that was accessed once the button was clicked then passed that as a variable to be used in the fetch
+							requests to get the countries or cities that users searched for.
+						</p>
+					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
 					<img src="./images/IP2 Coursework Files/Images/5_API_Access.jpg" alt="API_Access" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
@@ -133,11 +135,14 @@
 					<img src="./images/IP2 Coursework Files/Images/6_Data_Content.jpg" alt="Data_Content" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Data Content</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">Data Content</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							The data retrieved form all the calls showed basic weather information such as humidity, temperature in both Celsius and Fahrenheit as well as the date and time of the
+							country or city that was searched for. The API also shows forecast data for the next 2 days. For this application we used most of these features to create the tab that had
+							the current day summary as well as the forecast info under the graph.
+						</p>
+					</div>
 				</div>
 			</div>
 			<!-- section 3 -->
@@ -146,12 +151,15 @@
 					<img src="./images/IP2 Coursework Files/Images/7_Execution.jpg" alt="API_Execution" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
 				</div>
 				<div class="flex flex-col mb-24 md:mb-32 mt-10">
-					<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif] my-auto">Execution Visulization</h1>
-					<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices
-						mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-						sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-					</p>
+					<div class="my-auto">
+						<h1 class="md:text-4xl text-2xl lg:ml-20 font-extrabold font-['Nunito',sans-serif]">Execution Visualisation</h1>
+						<p class="sm:text-2xl text-xl ml-10 lg:ml-20 mt-5">
+							In order to execute this we used chart.js to create a visualisation of the data. We used the data of each country to create a line chart where the days were used as labels
+							and the average temperature was used as the data. For the tab we created a custom style and passed data directly from the api into our html this was mainly achieved with
+							JavaScript. We also formatted the dates to make ones that were easier to read for users as well as created checks for conditions and chose which of the icons to display for
+							the weather summary and humidity tabs.
+						</p>
+					</div>
 				</div>
 				<div class="hidden lg:block w-auto rounded-md m-5 h-auto">
 					<img src="./images/IP2 Coursework Files/Images/7_Execution.jpg" alt="API_Execution" srcset="" class="w-full h-full rounded-md shadow-slate-300 shadow-xl" />
