@@ -35,6 +35,7 @@
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
 									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="testimonials.html">Testimonials</a></li>
 								</ul>
 							</li>
 							<li class="float-left p-5">
@@ -79,6 +80,7 @@
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
 									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="testimonials.html">Testimonials</a></li>
 								</ul>
 							</div>
 							<div class="px-3 py-2 rounded text-white hover:bg-blue-500 hov">
@@ -155,6 +157,7 @@
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
 									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="testimonials.html">Testimonials</a></li>
 								</ul>
 							</li>
 							<li>
@@ -205,6 +208,7 @@
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
 									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
 									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="testimonials.html">Testimonials</a></li>
 								</ul>
 							</li>
 							<li>
@@ -278,11 +282,21 @@
 						hov[i].classList.add("hover:bg-blue-500");
 					}
 				}
-				document.getElementById("navSm").classList.remove("bg-blue-900");
-				document.getElementById("navSm").classList.add("bg-slate-400");
+				if (document.getElementById("navSm").classList.contains("bg-blue-900")) {
+					document.getElementById("navSm").classList.remove("bg-blue-900");
+					document.getElementById("navSm").classList.add("bg-slate-400");
+				} else {
+					document.getElementById("navSm").classList.remove("bg-slate-400");
+					document.getElementById("navSm").classList.add("bg-blue-900");
+				}
 
-				document.getElementById("menuIcon").classList.remove("hover:bg-blue-900");
-				document.getElementById("menuIcon").classList.add("hover:bg-slate-700");
+				if (document.getElementById("menuIcon").classList.contains("hover:bg-blue-900")) {
+					document.getElementById("menuIcon").classList.remove("hover:bg-blue-900");
+					document.getElementById("menuIcon").classList.add("hover:bg-slate-700");
+				} else {
+					document.getElementById("menuIcon").classList.remove("hover:bg-slate-700");
+					document.getElementById("menuIcon").classList.add("hover:bg-blue-900");
+				}
 
 				if (section[0].classList.contains("bg-[#000135]")) {
 					section[0].classList.remove("bg-[#000135]");
