@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" id="parent">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="20x20" href="./images/IP2_Coursework_Files/Logo_Files/bar.png" />
+		<title>IP2 Group 1</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="index.js" defer></script>
+		<link rel="stylesheet" href="output.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body class="overflow-auto font-['Nunito',sans-serif] relative z-0">
+		<!-- Header -->
+		<div id="bg" class="bg-cover bg-center overflow-auto bg-[#000135] mainBg">
+			<header class="flex">
+				<nav class="flex-grow text-white">
+					<img src="./images/IP2_Coursework_Files/Logo_Files/1_Original_Logo_(Transparent)_(Dark_Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" />
+					<!-- <img src="./images/IP2_Coursework_Files/Logo_Files/7_Logo_(Transparent)_(Grayscale).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" /> -->
+					<div class="hidden lg:block">
+						<ul class="list-none justify-center float-right text-2xl text-center p-5 z-0">
+							<li class="float-left p-5">
+								<a href="index.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 text-white links">Home</a>
+								<!-- <a href="index.html" class="hover:border-b-4 hover:border-white p-5 text-white links">Home</a> -->
+							</li>
+							<li class="float-left p-5">
+								<!-- <a href="authors.html" class="hover:border-b-4 hover:border-white p-5 hover:text-white links">Authors</a> -->
+								<a href="authors.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white links">Authors</a>
+							</li>
+							<li class="float-left p-5">
+								<!-- <span class="hover:border-b-4 hover:border-white p-5 hover:text-white cursor-pointer links" id="dropdown-1">Apps</span> -->
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer links" id="dropdown-1">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="ul-1">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li class="float-left p-5">
+								<!-- <span class="hover:border-b-4 hover:border-white p-5 hover:text-white cursor-pointer links" id="about-dropdown-nav">About</span> -->
+								<span class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white cursor-pointer links" id="about-dropdown-nav">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto absolute z-10" id="about-ul-nav">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li class="float-left p-5">
+								<!-- <a href="contact.html" class="hover:border-b-4 hover:border-white p-5 hover:text-white links">Contact</a> -->
+								<a href="contact.html" class="hover:border-b-4 hover:border-[#FF9900] p-5 hover:text-white links">Contact</a>
+							</li>
+						</ul>
+					</div>
+					<!-- Small screen navigation -->
+					<div class="float-right lg:hidden pr-4">
+						<button class="hover:bg-blue-900 rounded-md hover:text-white px-1 my-10 nav-toggler focus:outline-none" id="menuIcon">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 lx-10" viewBox="0 0 20 20" fill="currentColor">
+								<path
+									fill-rule="evenodd"
+									d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<!-- Small screen nav bar -->
+					<div class="bg-blue-900 w-full rounded-md absolute mt-20 hidden" id="navSm">
+						<div class="w-full">
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500 hov">
+								<a href="./index.html"> <span>Home</span></a>
+							</div>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500 hov">
+								<a href="authors.html" class="rounded-md hover:text-white">Authors</a>
+							</div>
+							<div class="px-3 py-2 rounded text-white-500 hover:bg-blue-500 hov">
+								<span class="hover:text-white cursor-pointer" id="dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+								</ul>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500 hov">
+								<span class="hover:text-white cursor-pointer" id="about-dropdown-2">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</div>
+							<div class="px-3 py-2 rounded text-white hover:bg-blue-500 hov">
+								<a href="contact.html"> <span>Contact</span></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+
+			<section class="text-white mx-5" id="title">
+				<div class="flex flex-col mb-24 md:mb-32 text-center max-w-screen-sm mx-auto">
+					<div class="my-auto">
+						<h1 class="md:text-6xl sm:text-4xl text-3xl font-extrabold font-['Nunito',sans-serif]">Testimonials</h1>
+						<p class="md:text-3xl sm:text-2xl text-xl mt-5">
+							Below is a testimonial page that shows the feedback from users. The feature used here is a dark mode switch that will change how this page looks like.
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<section class="flex h-[400px] section py-10">
+			<div class="my-auto mx-auto w-auto h-auto">
+				<!-- testimonials -->
+				<div class="flex h-fit w-fit">
+					<!-- left arrow -->
+					<div class="rounded-full my-auto p-3 bg-green-600 hover:bg-green-500 dark:bg-white dark:hover:bg-slate-200 cursor-pointer mr-2" onclick="prevTestimonial()" id="left">
+						<img src="./images/left-arrow.png" alt="left-arrow" class="mx-auto w-5 h-5" />
+					</div>
+					<!-- testimonial -->
+					<div class="rounded-md p-3 bg-blue-600 text-white shadow-xl md:w-72 w-40 text-center italic" id="testimonial"></div>
+					<!-- right arrow -->
+					<div class="rounded-full my-auto p-3 bg-green-600 hover:bg-green-500 dark:bg-white dark:hover:bg-slate-200 cursor-pointer ml-2 right" onclick="nextTestimonial()" id="right">
+						<img src="./images/right-arrow.png" alt="right-arrow" class="mx-auto w-5 h-5" />
+					</div>
+				</div>
+
+				<div class="flex my-5">
+					<!-- This is not entirely our code it was gotten from https://flowbite.com/docs/forms/toggle/ -->
+					<label for="default-toggle" class="inline-flex relative items-center cursor-pointer mx-auto mt-5">
+						<input type="checkbox" value="" id="default-toggle" class="sr-only peer" onclick="toggleDark()" />
+						<div
+							class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-600"
+						></div>
+					</label>
+				</div>
+			</div>
+		</section>
+
+		<!-- footer -->
+		<footer class="bg-[#000135] text-white h-auto p-5 mainBg">
+			<div class="flex">
+				<div class="lg:grid grid-cols-4 gap-20 mx-auto my-5 hidden">
+					<div>
+						<!-- <img src="./images/IP2_Coursework_Files/Logo_Files/7_Logo_(Transparent)_(Grayscale).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" /> -->
+						<img src="./images/IP2_Coursework_Files/Logo_Files/1_Original_Logo_(Transparent)_(Dark_Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" />
+					</div>
+					<div>
+						<h1 class="text-2xl">Navigation</h1>
+						<ul class="list-none my-3">
+							<li><a href="index.html" class="cursor-pointer">Home</a></li>
+							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<h1 class="text-2xl">Contact Information</h1>
+						<ul class="list-none my-3">
+							<li>+77717000998</li>
+							<li>worldinfodeskhelp@gmail.com</li>
+						</ul>
+					</div>
+					<div>
+						<h1 class="text-2xl">Socials</h1>
+						<ul class="list-none my-3">
+							<li class="flex">
+								<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+							<li class="flex">
+								<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mx-auto my-5 flex flex-col space-y-5 lg:hidden">
+					<div>
+						<img src="./images/IP2_Coursework_Files/Logo_Files/1_Original_Logo_(Transparent)_(Dark_Background).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" />
+						<!-- <img src="./images/IP2_Coursework_Files/Logo_Files/7_Logo_(Transparent)_(Grayscale).png" alt="Website_Logo" class="float-left w-auto h-28 p-5 logo" /> -->
+					</div>
+					<div>
+						<h1 class="text-2xl">Navigation</h1>
+						<ul class="list-none my-3">
+							<li><a href="index.html" class="cursor-pointer">Home</a></li>
+							<li><a href="authors.html" class="cursor-pointer">Authors</a></li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="footer-dropdown-2">Apps</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="footer-ul-2">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population.html">Population</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid.html">Covid</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather.html">Weather</a></li>
+								</ul>
+							</li>
+							<li>
+								<span class="hover:text-white cursor-pointer" id="about-dropdown-1">About</span>
+								<ul class="hidden rounded-md mt-6 mx-auto" id="about-ul-1">
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="population_desc.html">Population Description</a></li>
+									<li class="p-3 bg-blue-800 hover:bg-blue-600 list"><a href="covid_desc.html">Covid Description</a></li>
+									<li class="p-3 bg-blue-700 hover:bg-blue-600 list"><a href="weather_desc.html">Weather Description</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html" class="cursor-pointer">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<h1 class="text-2xl">Contact Information</h1>
+						<ul class="list-none my-3">
+							<li>+77717000998</li>
+							<li>worldinfodeskhelp@gmail.com</li>
+						</ul>
+					</div>
+					<div>
+						<h1 class="text-2xl">Socials</h1>
+						<ul class="list-none my-3">
+							<li class="flex">
+								<img src="./images/icons8-facebook-50.png" alt="facebook icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+							<li class="flex">
+								<img src="./images/icons8-instagram-50.png" alt="instagram icon" />
+								<a href="" class="my-auto">@WorldInfoDeskOfficial</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- copyright -->
+			<div class="flex">
+				<p class="text-center mx-auto text-slate-400">&copy; 2022 WorldInfoDesk. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script>
+			var i = 0;
+			function toggleDark() {
+				const links = document.getElementsByClassName("links");
+				const logo = document.getElementsByClassName("logo");
+				const mainBg = document.getElementsByClassName("mainBg");
+				const section = document.getElementsByClassName("section");
+				const testimonial = document.getElementById("testimonial");
+				const right = document.getElementById("right");
+				const left = document.getElementById("left");
+				const list = document.getElementsByClassName("list");
+				const hov = document.getElementsByClassName("hov");
+
+				for (let i = 0; i < list.length; i++) {
+					if (list[i].classList.contains("bg-blue-700") || list[i].classList.contains("bg-blue-800")) {
+						list[i].classList.remove("bg-blue-700", "hover:bg-blue-600");
+						list[i].classList.remove("bg-blue-800", "hover:bg-blue-600");
+						list[i].classList.add("bg-slate-700", "hover:bg-slate-900");
+					} else {
+						list[i].classList.remove("bg-slate-700", "hover:bg-slate-900");
+						list[i].classList.add("bg-blue-700", "hover:bg-blue-600");
+					}
+				}
+				for (let i = 0; i < hov.length; i++) {
+					if (hov[i].classList.contains("hover:bg-blue-500")) {
+						hov[i].classList.remove("hover:bg-blue-500");
+						hov[i].classList.add("hover:bg-slate-600");
+					} else {
+						hov[i].classList.remove("hover:bg-slate-600");
+						hov[i].classList.add("hover:bg-blue-500");
+					}
+				}
+				document.getElementById("navSm").classList.remove("bg-blue-900");
+				document.getElementById("navSm").classList.add("bg-slate-400");
+
+				document.getElementById("menuIcon").classList.remove("hover:bg-blue-900");
+				document.getElementById("menuIcon").classList.add("hover:bg-slate-700");
+
+				if (section[0].classList.contains("bg-[#000135]")) {
+					section[0].classList.remove("bg-[#000135]");
+				} else {
+					section[0].classList.add("bg-[#000135]");
+				}
+
+				if (testimonial.classList.contains("bg-blue-600")) {
+					testimonial.classList.remove("bg-blue-600");
+					testimonial.classList.add("bg-slate-700", "shadow-violet-200");
+					right.classList.remove("bg-green-600", "hover:bg-green-500");
+					left.classList.remove("bg-green-600", "hover:bg-green-500");
+					right.classList.add("bg-white", "hover:bg-slate-200");
+					left.classList.add("bg-white", "hover:bg-slate-200");
+				} else {
+					testimonial.classList.remove("bg-slate-700", "shadow-violet-200");
+					testimonial.classList.add("bg-blue-600");
+					right.classList.add("bg-green-600", "hover:bg-green-500");
+					left.classList.add("bg-green-600", "hover:bg-green-500");
+					right.classList.remove("bg-white", "hover:bg-slate-200");
+					left.classList.remove("bg-white", "hover:bg-slate-200");
+				}
+				for (let i = 0; i < links.length; i++) {
+					if (links[i].classList.contains("hover:border-[#FF9900]")) {
+						links[i].classList.remove("hover:border-[#FF9900]");
+						links[i].classList.add("hover:border-white]");
+					} else {
+						links[i].classList.remove("hover:border-white]");
+						links[i].classList.add("hover:border-[#FF9900]");
+					}
+				}
+				for (let i = 0; i < logo.length; i++) {
+					if (logo[i].getAttribute("src") == "./images/IP2_Coursework_Files/Logo_Files/1_Original_Logo_(Transparent)_(Dark_Background).png") {
+						logo[i].removeAttribute("src");
+						logo[i].setAttribute("src", "./images/IP2_Coursework_Files/Logo_Files/7_Logo_(Transparent)_(Grayscale).png");
+					} else {
+						logo[i].removeAttribute("src");
+						logo[i].setAttribute("src", "./images/IP2_Coursework_Files/Logo_Files/1_Original_Logo_(Transparent)_(Dark_Background).png");
+					}
+				}
+				for (let i = 0; i < mainBg.length; i++) {
+					if (mainBg[i].classList.contains("bg-[#000135]")) {
+						mainBg[i].classList.remove("bg-[#000135]");
+						mainBg[i].classList.add("bg-slate-900");
+					} else {
+						mainBg[i].classList.remove("bg-slate-900");
+						mainBg[i].classList.add("bg-[#000135]");
+					}
+				}
+			}
+			fetch("https://testimonialapi.toolcarton.com/api")
+				.then((results) => results.json())
+				.then(function (data) {
+					const testimonial = document.getElementById("testimonial");
+
+					testimonial.innerHTML = '<p> "' + data[0].message + '"' + "<br/></p>" + "<p class='text-xl font-bold'>- " + data[0].name + "</p>";
+				});
+
+			function nextTestimonial() {
+				fetch("https://testimonialapi.toolcarton.com/api")
+					.then((results) => results.json())
+					.then(function (data) {
+						if (i >= data.length - 1) {
+							i = 0;
+							testimonial.innerHTML = '<p> "' + data[i].message + '"' + "<br/></p>" + "<p class='text-xl font-bold'>- " + data[i].name + "</p>";
+						} else {
+							i++;
+							testimonial.innerHTML = '<p> "' + data[i].message + '"' + "<br/></p>" + "<p class='text-xl font-bold'>- " + data[i].name + "</p>";
+						}
+					});
+			}
+			function prevTestimonial() {
+				fetch("https://testimonialapi.toolcarton.com/api")
+					.then((results) => results.json())
+					.then(function (data) {
+						if (i == 0) {
+							i = data.length - 1;
+							testimonial.innerHTML = '<p> "' + data[i].message + '"' + "<br/></p>" + "<p class='text-xl font-bold'>- " + data[i].name + "</p>";
+						} else {
+							i--;
+							testimonial.innerHTML = '<p> "' + data[i].message + '"' + "<br/></p>" + "<p class='text-xl font-bold'>- " + data[i].name + "</p>";
+						}
+					});
+			}
+		</script>
+	</body>
+</html>
